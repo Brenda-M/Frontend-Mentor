@@ -8,6 +8,10 @@ function calculateAge() {
   document.getElementById('month').classList.remove('error');
   document.getElementById('year').classList.remove('error');
 
+  document.querySelector('label[for="day"]').classList.remove('error');
+  document.querySelector('label[for="month"]').classList.remove('error');
+  document.querySelector('label[for="year"]').classList.remove('error');
+
   const day = parseInt(document.getElementById('day').value);
   const month = parseInt(document.getElementById('month').value);
   const year = parseInt(document.getElementById('year').value);
@@ -86,14 +90,4 @@ function calculateAge() {
   document.getElementById('result-years').innerText = years;
   document.getElementById('result-months').innerText = months;
   document.getElementById('result-days').innerText = days;
-}
-
-
-function isValidDateCheck(day, month, year) {
-  const date = new Date(year, month - 1, day);
-  return (
-    date.getDate() === day &&
-    date.getMonth() === month - 1 &&
-    date.getFullYear() === year
-  );
 }

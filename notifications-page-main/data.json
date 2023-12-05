@@ -1,0 +1,48 @@
+{
+  "notifications": [
+    {
+      "type": "reaction",
+      "content": " reacted to your recent post My first tournament today!",
+      "timestamp": "1m ago",
+      "avatar": "./assets/images/avatar-mark-webber.webp"
+    },
+    {
+      "type": "follow",
+      "content": "followed you",
+      "timestamp": "5m ago",
+      "avatar": "./assets/images/avatar-angela-gray.webp"
+    },
+    {
+      "type": "join",
+      "content": "has joined your group Chess Club",
+      "timestamp": "1 day ago",
+      "avatar": "./assets/images/avatar-jacob-thompson.webp"
+    },
+    {
+      "type": "message",
+      "content": "sent you a private message",
+      "timestamp": "5 days ago",
+      "additionalContent": "Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game.",
+      "avatar": "./assets/images/avatar-rizky-hasanuddin.webp"
+    },
+    {
+      "type": "comment",
+      "content": "commented on your picture",
+      "timestamp": "1 week ago",
+      "avatar": "./assets/images/avatar-kimberly-smith.webp",
+      "image":"./assets/images/image-chess.webp"
+    },
+    {
+      "type": "reaction",
+      "content": "eacted to your recent post 5 end-game strategies to increase your win rate",
+      "timestamp": "2 weeks ago",
+      "avatar": "./assets/images/avatar-nathan-peterson.webp"
+    },
+    {
+      "type": "leave",
+      "content": "left the group Chess Club",
+      "timestamp": "2 weeks ago",
+      "avatar": "./assets/images/avatar-anna-kim.webp"
+    }
+  ]
+}

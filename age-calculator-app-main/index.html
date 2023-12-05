@@ -60,8 +60,7 @@
                 <p id="year-error" class="error-message"></p>
               </div>
             </div>
-            <div class="button-container">
-              <hr />
+            <!-- <div class="button-container">
               <button class="submit">
                 <input
                   type="image"
@@ -70,23 +69,20 @@
                   onclick="calculateAge()"
                 />
               </button>
+            </div> -->
+            <div class="button-container">
+              <div class="line"></div>
+              <button class="submit">
+                <input
+                  type="image"
+                  src="./assets/images/icon-arrow.svg"
+                  id="submit-img"
+                  onclick="calculateAge()"
+                />
+              </button>
+             
             </div>
             
-            
-            <!-- <div class="main-button-container">
-              <hr />
-              <div class="button-container">
-                <button class="submit">
-                  <input
-                    type="image"
-                    src="./assets/images/icon-arrow.svg"
-                    id="submit-img"
-                    onclick="calculateAge()"
-                  />
-                </button>
-              </div>
-            </div> -->
-
             <div class="mb-3 results">
               <p><span id="result-years">--</span> years</p>
               <p><span id="result-months">--</span> months</p>
