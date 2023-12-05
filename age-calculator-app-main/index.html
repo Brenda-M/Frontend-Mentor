@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Age calculator app</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-light">
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card p-4 shadow p-3 mb-5 bg-white">
+            <div class="row mb-3">
+              <div class="col">
+                <label for="day" class="form-label">Day</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="day"
+                  placeholder="DD"
+                />
+                <p id="day-error" class="error-message"></p>
+              </div>
+
+              <div class="col">
+                <label for="month" class="form-label">Month</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="month"
+                  placeholder="MM"
+                />
+                <p id="month-error" class="error-message"></p>
+              </div>
+
+              <div class="col">
+                <label for="year" class="form-label">Year</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="year"
+                  placeholder="YYYY"
+                />
+                <p id="year-error" class="error-message"></p>
+              </div>
+            </div>
+            <div class="button-container">
+              <hr />
+              <button class="submit">
+                <input
+                  type="image"
+                  src="./assets/images/icon-arrow.svg"
+                  id="submit-img"
+                  onclick="calculateAge()"
+                />
+              </button>
+            </div>
+            
+            
+            <!-- <div class="main-button-container">
+              <hr />
+              <div class="button-container">
+                <button class="submit">
+                  <input
+                    type="image"
+                    src="./assets/images/icon-arrow.svg"
+                    id="submit-img"
+                    onclick="calculateAge()"
+                  />
+                </button>
+              </div>
+            </div> -->
+
+            <div class="mb-3 results">
+              <p><span id="result-years">--</span> years</p>
+              <p><span id="result-months">--</span> months</p>
+              <p><span id="result-days">--</span> days</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
