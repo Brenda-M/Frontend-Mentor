@@ -1,3 +1,14 @@
+function isValidDateCheck(day, month, year) {
+
+  const date = new Date(year, month - 1, day);
+
+  return (
+    date.getDate() === day &&
+    date.getMonth() === month - 1 &&
+    date.getFullYear() === year
+  );
+}
+
 function calculateAge() {
   // Reset error messages and input field styles
   document.getElementById('day-error').innerText = '';

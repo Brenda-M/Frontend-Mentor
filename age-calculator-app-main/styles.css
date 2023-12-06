@@ -97,9 +97,7 @@ span{
 .submit {
   background-color: hsl(259, 100%, 65%);
   border: none;
-  /* left: 50%; */
-  left:0;
-  /* right: 50%; */
+  left:90%;
   border-radius: 50%;
   cursor: pointer;
   padding: 0;
@@ -112,11 +110,9 @@ span{
 
 .button-container {
   position: relative;
-  display: inline-block;
 }
 
 .button-container .line {
-  content: "";
   display: block;
   height: 2px;
   width: 100%;
@@ -125,6 +121,7 @@ span{
   top: 50%;
   transform: translateY(-50%);
 }
+
 
 #submit-img {
   margin-right: 10px;
@@ -181,31 +178,30 @@ input[type=number] {
 }
 
 
+@media (max-width: 960px) {
+
+  .submit{
+    left:80%;
+  }
+
+}
+
 @media (max-width: 375px) {
   .button-container {
-    /* position: absolute; */
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    text-align: center; 
   }
 
-  /* .submit{
-    width: 60px;
-    height: 60px;
-  } */
+  .button-container .line {
+    width: 100%; 
+  }
+
   .submit{
-    width: 64px;
-    height: 64px;
-    bottom: -65px;
-    right: 0;
-    left: 0;
-    margin-right: auto;
-    margin-left: auto;
+    left:0px;
+    width: 65px;
+    height: 65px;
   }
 
-  /* .button-container .line {
-    width: 50%;
-    left: 0;
-  } */
 }
+
+
 
