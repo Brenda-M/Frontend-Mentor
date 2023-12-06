@@ -9,6 +9,25 @@ function isValidDateCheck(day, month, year) {
   );
 }
 
+function animateCountUp(element, finalValue) {
+  let start = 0;
+  const duration = 1000; 
+  const interval = 10;
+  const step = (finalValue / duration) * interval;
+
+  function update() {
+    start += step;
+    if (start >= finalValue) {
+      element.innerText = finalValue;
+    } else {
+      element.innerText = Math.floor(start);
+      requestAnimationFrame(update);
+    }
+  }
+
+  update();
+}
+
 function calculateAge() {
   // Reset error messages and input field styles
   document.getElementById('day-error').innerText = '';
@@ -98,7 +117,7 @@ function calculateAge() {
   const months = Math.floor((ageInMilliseconds % (365.25 * 24 * 60 * 60 * 1000)) / (30.44 * 24 * 60 * 60 * 1000));
   const days = Math.floor((ageInMilliseconds % (30.44 * 24 * 60 * 60 * 1000)) / (24 * 60 * 60 * 1000));
 
-  document.getElementById('result-years').innerText = years;
-  document.getElementById('result-months').innerText = months;
-  document.getElementById('result-days').innerText = days;
+  animateCountUp(document.getElementById('result-years'), years);
+  animateCountUp(document.getElementById('result-months'), months);
+  animateCountUp(document.getElementById('result-days'), days);
 }

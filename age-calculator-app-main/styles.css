@@ -205,3 +205,18 @@ input[type=number] {
 
 
 
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.result-number {
+  animation: countUp 1s ease-in-out; 
+}
+
