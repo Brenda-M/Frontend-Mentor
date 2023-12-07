@@ -26,7 +26,8 @@
   "scripts": {
     "start": "concurrently \"npm run dev-server\" \"npm run tsc-watch\"",
     "dev-server": "react-scripts start",
-    "tsc-watch": "tsc --watch"
+    "tsc-watch": "tsc --watch",
+    "build": "react-scripts build"
   },  
   "eslintConfig": {
     "extends": [
