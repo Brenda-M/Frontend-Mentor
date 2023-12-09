@@ -1,0 +1,597 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+
+  Score
+  Rules
+
+  You Picked
+  The House Picked
+
+  You Win
+  You Lose
+
+  Play Again
+
+
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html> -->
+
+:root {
+  --rock-primary: hsl(349, 70%, 56%);
+  --rock-secondary: hsl(349, 71%, 52%);
+  --rock-shadow: hsl(348, 80%, 37%);
+  --paper-primary: hsl(230, 89%, 65%);
+  --paper-secondary: hsl(230, 89%, 62%);
+  --paper-shadow: hsl(228, 63%, 45%);
+  --scissors-primary: hsl(40, 84%, 53%);
+  --scissors-secondary: hsl(39, 89%, 49%);
+  --scissors-shadow: hsl(28, 71%, 45%);
+  --lizard-primary: hsl(261, 72%, 63%);
+  --lizard-secondary: hsl(261, 73%, 60%);
+  --spock-primary: hsl(189, 58%, 57%);
+  --spock-secondary: hsl(189, 59%, 53%);
+}
+
+.chip--rock {
+  --chip-primary: var(--rock-primary);
+  --chip-secondary: var(--rock-secondary);
+  --chip-shadow: var(--rock-shadow);
+}
+
+.chip--paper {
+  --chip-primary: var(--paper-primary);
+  --chip-secondary: var(--paper-secondary);
+  --chip-shadow: var(--paper-shadow);
+}
+
+.chip--scissors {
+  --chip-primary: var(--scissors-primary);
+  --chip-secondary: var(--scissors-secondary);
+  --chip-shadow: var(--scissors-shadow);
+}
+
+.chip--lizard {
+  --chip-primary: var(--lizard-primary);
+  --chip-secondary: var(--lizard-secondary);
+}
+
+.chip--spock {
+  --chip-primary: var(--spock-primary);
+  --chip-secondary: var(--spock-secondary);
+}
+
+.chip {
+  background-color: var(--chip-primary);
+  border: 1px solid var(--chip-secondary);
+  box-shadow: inset 0px 10px 0px 1px var(--chip-shadow), inset 0px -10px 0 1px rgba(10, 1, 1, 0.3);
+}
+
+.chip--rock, .chip--paper, .chip--scissors, .chip--lizard, .chip--spock {
+  background-color: #e4e4e4;
+  background-position: center;
+  background-size: 42.5%;
+  background-repeat: no-repeat;
+
+  @media only screen and (max-width: 1200px) {
+    background-size: 50%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .chip {
+    height: 20rem;
+    width: 20rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .chip {
+    height: 12rem;
+    width: 12rem;
+  }
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-image: linear-gradient(to bottom right, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+}
+
+#game {
+  margin-top: 20px;
+}
+
+.choice {
+  font-size: 16px;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+button {
+  border: 5px solid #fff; /* Adjust the thickness and color of the border */
+  border-radius: 50%; /* Create a circular shape */
+  cursor: pointer;
+  appearance: none;
+  width: 100px; 
+  height: 100px; 
+  background-color: inherit;
+  transition: transform 0.7s ease-in-out, box-shadow 0.3s ease-in-out; /* Added box-shadow transition */
+}
+
+button:hover {
+  transform: rotate(360deg);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7); /* Adjust the box-shadow for the 3D effect */
+}
+
+
+img {
+  width: 100%; 
+  height: auto; 
+}
+
+/* .circular--portrait
+ { 
+  position: relative; 
+  width: 200px; 
+  height: 200px; 
+  overflow: hidden; 
+  border-radius: 50%; 
+}  */
+  .circular--portrait img { 
+    width: 100%; 
+    height: auto; 
+  }
+
+  h1 {
+    max-width: min-content;
+    font-size: 2.5rem;
+    line-height: 0.8;
+    font-weight: 700;
+
+    @media only screen and (max-width:600px) {
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 0.9;
+    }
+}
+
+h2 {
+    color: hsl(229, 25%, 31%);
+    font-size: 3rem;
+
+    @media only screen and (max-width:600px) {
+        font-size: 4rem;
+    }
+}
+
+h3 {
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+    white-space: nowrap;
+
+    @media only screen and (max-width:600px) {
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+    }
+}
+
+.score {
+  display: flex;
+  background-color: #fbfbfb;
+  padding: 2.5% 7%;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border-radius: 10px;
+
+  &__tag {
+    color: hsl(229, 64%, 46%);
+    letter-spacing: 1.5px;
+    font-size: 1.8rem;
+  }
+
+  &__value {
+    color: hsl(218, 15%, 31%);
+    font-size: 6rem;
+    line-height: 1;
+    font-weight: 700;
+  }
+
+  @media only screen and (max-width:600px) {
+    border-radius: 6px;
+    padding: 3.5% 8.5%;
+
+    &__tag {
+      letter-spacing: 1.5px;
+      font-size: 1.3rem;
+    }
+
+    &__value {
+      font-size: 5.2rem;
+    }
+  }
+}
+
+.btn--play-again {
+  margin: 7% 0;
+  border: none;
+  display: inline-block;
+  padding: 7% 25%;
+  border-radius: 7px;
+
+  @media only screen and (max-width:600px) {
+    padding: 4.5% 18.5%;
+    border-radius: 10px;
+    margin: 5%;
+  }
+}
+
+.btn--rules,
+.btn--rules:link,
+.btn--rules:visited {
+  text-decoration: none;
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid hsl(218, 24%, 75%);
+  padding: 1rem 3.5rem;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  transition: all 0.2s;
+
+  @media only screen and (max-width:600px) {
+    font-size: 2.1rem;
+    padding: 1.3rem 4.5rem;
+    margin: 8% 0 13%;
+  }
+}
+
+.btn--rules:hover,
+.btn--rules:active {
+  color: hsl(229, 25%, 31%);
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.popup {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: hsla(237, 85%, 5%, 0.699);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__content {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 2.5%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 30%;
+  }
+
+  .rules {
+    margin: 2rem 0;
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  @media only screen and (max-width:600px) {
+    &__content {
+      width: 100%;
+      height: 100%;
+      flex-wrap: nowrap;
+      flex-direction: column;
+      justify-content: space-evenly;
+      padding: 5%;
+    }
+
+    &__close {
+      order: 3;
+    }
+
+    .rules {
+      width: 95%;
+      margin: 3rem 0 10rem;
+    }
+  }
+}
+
+.winner {
+  height: 0;
+  width: 0;
+  background-color: rgba(255, 255, 255, 0.02);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  position: absolute;
+  transition: all 2s;
+  animation: 1s infinite alternate grow;
+  transform: translate3d(-50%, -50%, -20px);
+
+  &::after,
+  &::before {
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &::before {
+    height: 81.25%;
+    width: 81.25%;
+    background-color: rgba(255, 255, 255, .03);
+  }
+
+  &::after {
+    height: 62.5%;
+    width: 62.5%;
+    background-color: rgba(255, 255, 255, .05);
+  }
+}
+
+.chip {
+  height: 22.539rem;
+  width: 22.539rem;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  background-color: hsla(238, 48%, 15%, 0.501);
+  position: relative;
+
+  &::after,
+  &::before {
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+
+  &::after {
+    height: 135%;
+    width: 135%;
+    transform: translate3d(-50%, -50%, -10px);
+  }
+
+  &::before {
+    visibility: hidden;
+    height: 100%;
+    width: 100%;
+    transform: translate3d(-50%, -50%, -20px);
+    background-image: radial-gradient(circle, #fff 1%, transparent 60%);
+    transition: all 0.15s;
+  }
+
+  &--scissors {
+    @include setChipBase("../images/icon-scissors.svg", $scissors-primary, $scissors-secondary);
+  }
+
+  &--rock {
+    @include setChipBase("../images/icon-rock.svg", $rock-primary, $rock-secondary);
+  }
+
+  &--paper {
+    @include setChipBase("../images/icon-paper.svg", $paper-primary, $paper-secondary);
+  }
+
+  &--lizard {
+    @include setChipBase("../images/icon-lizard.svg", $lizard-primary, $lizard-secondary);
+  }
+
+  &--spock {
+    @include setChipBase("../images/icon-spock.svg", $spock-primary, $spock-secondary);
+  }
+
+  &--scissors,
+  &--rock,
+  &--paper,
+  &--lizard,
+  &--spock {
+    @include setChipShadow-L;
+    background-color: #e4e4e4;
+    background-position: center;
+    background-size: 42.5%;
+    background-repeat: no-repeat;
+
+    @media only screen and (max-width:1200px) {
+      background-size: 50%;
+    }
+  }
+
+  @media only screen and (max-width:1200px) {
+    height: 20rem;
+    width: 20rem;
+  }
+
+  @media only screen and (max-width:600px) {
+    height: 12rem;
+    width: 12rem;
+  }
+}
+
+.selection-window>.chip {
+  &--scissors,
+  &--rock,
+  &--paper,
+  &--lizard,
+  &--spock {
+    @include setChipShadow-S;
+  }
+
+  &:hover::before {
+    visibility: visible;
+    height: 200%;
+    width: 200%;
+  }
+}
+
+@mixin setChipBase($icon, $color-primary, $color-secondary) {
+  border: $color-secondary 1px solid;
+  background-image: url($icon);
+
+  &::after {
+    background-image: linear-gradient(to bottom, $color-primary, $color-secondary);
+  }
+}
+
+@mixin setChipShadow-L {
+  box-shadow: inset 0px 10px 0px 1px #bac0d3;
+
+  &::after {
+    box-shadow: inset 0px -10px 0 1px rgba(10, 1, 1, 0.3);
+  }
+
+  @media only screen and (max-width:600px) {
+    box-shadow: inset 0px 5px 0px 1px #bac0d3;
+
+    &::after {
+      box-shadow: inset 0px -5px 0 1px rgba(10, 1, 1, 0.3);
+    }
+  }
+}
+
+@mixin setChipShadow-S {
+  box-shadow: inset 0px 8px 0px -1px #bac0d3;
+
+  &::after {
+    box-shadow: inset 0px -8px 0 -1px rgba(10, 1, 1, 0.3);
+  }
+
+  @media only screen and (max-width:600px) {
+    box-shadow: inset 0px 5px 0px -1px #bac0d3;
+
+    &::after {
+      box-shadow: inset 0px -5px 0 -1px rgba(10, 1, 1, 0.3);
+    }
+  }
+}
+
+
+@keyframes grow {
+  0% {
+      height: 0;
+      width: 0;
+  }
+
+  100% {
+      height: 320%;
+      width: 320%;
+  }
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <header class="header">
+    <h1 class="game-name">ROCK PAPER SCISSORS LIZARD SPOCK</h1>
+    <div class="score">
+      <span class="score__tag">SCORE</span>
+      <span class="score__value">12</span>
+    </div>
+  </header>
+  <main class="game">
+    <div class="selection-window">
+      <div class="chip chip--scissors" data-option="0"></div>
+      <div class="chip chip--paper" data-option="1"></div>
+      <div class="chip chip--rock" data-option="2"></div>
+      <div class="chip chip--lizard" data-option="3"></div>
+      <div class="chip chip--spock" data-option="4"></div>
+    </div>
+    <div class="result-window result-pending hide">
+      <h3 class="title--player">YOU PICKED</h3>
+      <h3 class="title--opponent">THE HOUSE PICKED</h3>
+      <div class="choice choice__player">
+        <div class="chip">
+          <div class="winner hide"></div>
+        </div>
+      </div>
+      <div class="choice choice__opponent">
+        <div class="chip">
+          <div class="winner hide"></div>
+        </div>
+      </div>
+      <div class="result hide">
+        <span>YOU WIN</span>
+        <button class="btn--play-again">PLAY AGAIN</button>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <a href="#rules" class="btn--rules">RULES</a>
+  </footer>
+  <div class="popup" id="rules">
+    <div class="popup__content">
+      <h2 class="popup__title">RULES</h2>
+      <a href="#" class="popup__close"><img src="./images/icon-close.svg" alt="close"></a>
+      <div class="rules">
+        <img src="./images/image-rules-bonus.svg" alt="rules">
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,600;0,700;1,600;1,700&display=swap');
+
+:root {
+  --rock-primary: hsl(349, 70%, 56%);
+  --rock-secondary: hsl(349, 71%, 52%);
+  --rock-shadow: hsl(348, 80%, 37%);
+  --paper-primary: hsl(230, 89%, 65%);
+  --paper-secondary: hsl(230, 89%, 62%);
+  --paper-shadow: hsl(228, 63%, 45%);
+  --scissors-primary: hsl(40, 84%, 53%);
+  --scissors-secondary: hsl(39, 89%, 49%);
+  --scissors-shadow: hsl(28, 71%, 45%);
+  --lizard-primary: hsl(261, 72%, 63%);
+  --lizard-secondary: hsl(261, 73%, 60%);
+  --spock-primary: hsl(189, 58%, 57%);
+  --spock-secondary: hsl(189, 59%, 53%);
+  --dark-text: hsl(229, 25%, 31%);
+  --score-text: hsl(229, 64%, 46%);
+  --header-outline: hsl(217, 16%, 45%);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+.container{
+  max-width: 1366px;
+}
+
+body {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  background-image: radial-gradient(circle at top, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* .header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1% 1.5% 1% 2%;
+  margin: 1.8% 0 0;
+  border: 3px solid var(--header-outline);
+  border-radius: 5px;
+} */
+.header {
+  display: flex;
+  width: 52%;
+  border: 3px solid hsl(217, 16%, 45%);
+  border-radius: 15px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1% 1.5% 1% 2%;
+  margin: 1.8% 0 0;
+
+  @media only screen and (max-width:600px) {
+      width: 85%;
+      padding: 2.5% 2.5% 2.5% 6%;
+      border-radius: 8px;
+      margin: 8%;
+  }
+}
+
+h2 {
+  display: block;
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 1.5em;
+  /* margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px; */
+  font-weight: bold;
+}
+
+.score{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  margin:8px;
+  background-color: #fff;
+  border-radius: 8%;
+
+}
+
+.score-value{
+  color: var(--score-text);
+  font-size: 3rem;
+}
+
+.score span:first-child {
+  color: var(--dark-text);
+  text-transform: uppercase;
+}
+
+
+/* h1 {
+  max-width: min-content;
+  font-size: 2.5rem;
+  line-height: 0.8;
+  font-weight: 700;
+
+  @media only screen and (max-width:600px) {
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 0.9;
+  }
+} */
