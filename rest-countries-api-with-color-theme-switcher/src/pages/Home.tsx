@@ -41,8 +41,15 @@ const Home: React.FC = () => {
           <CountryFilter countries={countries} onFilterChange={handleFilterChange} />
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         {filteredCountries.map((country) => (
+          <div key={country.name.official}>
+            <CountryCard country={country} />
+          </div>
+        ))}
+      </div> */}
+      <div className="countries">
+      {filteredCountries.map((country) => (
           <div key={country.name.official}>
             <CountryCard country={country} />
           </div>

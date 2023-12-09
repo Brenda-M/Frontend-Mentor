@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap');
+
+:root {
+  --grayish-blue: hsl(237, 18%, 59%);
+  --soft-red: hsl(345, 95%, 68%);
+  --white: hsl(0, 0%, 100%);
+  --dark-desaturated-blue: hsl(236, 21%, 26%);
+  --very-dark-blue: hsl(235, 16%, 14%);
+  --very-dark-black-blue: hsl(234, 17%, 12%);
+  --size: 5px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Red Hat Text', sans-serif;
+}
+
+h1 {
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  color: var(--soft-red);
+  font-size: 4rem;
+}
+
+#container{
+  position: relative;
+  min-height: 100vh;
+  text-align: center;
+  background-color: var(--very-dark-black-blue);
+  background-image: url('./images/bg-stars.svg');
+}
+
+#wrapper{
+  padding-top: 12rem;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: .8rem;
+}
+
+small {
+  text-transform: capitalize;
+  color: var(--grayish-blue);
+}
+
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height:12rem;
+  background-image: url('./images/pattern-hills.svg');
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.socials a{
+  padding: .5rem;
+}
+
+a:hover {
+  color: var(--soft-red);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* .card-top,
+.card-bottom {
+  background-color: var(--very-dark-black-blue);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-bottom {
+  background-color: var(--dark-desaturated-blue);
+}
+ */
+ .time {
+  position: relative;
+  text-align: center;
+}
+
+.card-top,
+.card-bottom {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 50%;
+  padding: 10px;
+  background-color: var(--dark-desaturated-blue);
+  z-index: 1;
+}
+
+.card-top {
+  top: 0;
+}
+
+.card-bottom {
+  bottom: 0;
+}
+
+#days {
+  position: relative;
+  z-index: 2;
+}
+
+small {
+  position: relative;
+  z-index: 2;
+}
+
+.semicircle-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+}
+
+.right-semicircle,
+.left-semicircle {
+  height: calc(var(--size) * 2);
+  width: var(--size);
+  position: absolute;
+  background-color: green;
+}
+
+.left-semicircle {
+  border-bottom-left-radius: calc(var(--size) * 2);
+  border-top-left-radius: calc(var(--size) * 2);
+  left: -var(--size);
+}
+
+.right-semicircle {
+  border-bottom-right-radius: calc(var(--size) * 2);
+  border-top-right-radius: calc(var(--size) * 2);
+  right: -var(--size);
+}

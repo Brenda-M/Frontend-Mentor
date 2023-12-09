@@ -10,13 +10,12 @@ const CountryCard: React.FC<CountryCardProps> = ({ country }) => {
   const { population, region, capital, name } = country;
 
   return (
-    <div className="aspect-w-3 aspect-h-4">
+    <div>
       <div className="rounded overflow-hidden shadow-lg flex flex-col h-full transform transition duration-300 hover:scale-105">
         <Link to={`/country/${name.common}`} className="flex flex-col h-full">
-          {/* <div className="relative aspect-w-3 aspect-h-2"> */}
-          <div className="relative h-48">
+          <div className="relative h-32">
             <img
-              className="w-full h-full object-cover aspect-h-2"
+              className="w-full h-full object-cover"
               src={country.flags.svg}
               alt={`${name.common} Flag`}
             />
