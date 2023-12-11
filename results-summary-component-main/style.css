@@ -44,6 +44,7 @@ main {
 .card {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
   grid-gap: 16px;
   padding: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -195,12 +196,15 @@ button:hover{
   background: linear-gradient(to bottom, var(--light-slate-blue), var(--light-royal-blue));
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
   .card {
     grid-template-columns: repeat(1, 1fr);
     overflow: hidden;
     position: relative;
-    margin: 2rem;
+    width: 100%;
+    /* margin: 1rem; */
+    padding: 10px;
+    grid-gap: 1rem;
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
 
@@ -217,9 +221,42 @@ button:hover{
     }
   }
 
-  .summary{
-    height: 50%;
-    width: 100%;
+  .summary {
+    gap: 5px;
+    padding: 0rem 1.5rem;
+    margin-top: 20px;
+  }
+
+  .summary h2{
+    font-size: 1.2rem;
+  }
+
+  .result{
+    gap: 5px;
+    padding: 0rem 1.5rem;
+  }
+
+  .result-value {
+    width: 120px; 
+    height: 120px; 
+  }
+
+  .result h1 {
+    font-size: 18px;
+  }
+
+  .result-value h1 {
+    font-size: 3rem;
+  }
+
+  .result-text{
+    color: var(--light-lavender);
+    /* width: 20rem; */
+    width: 50%;
+    font-size: 16px;
+  }
+
+  button {
+    font-size: 0.8rem;
   }
 }
-
