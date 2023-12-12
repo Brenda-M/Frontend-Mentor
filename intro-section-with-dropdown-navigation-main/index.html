@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+  </head>
+  <body>
+    <nav class="desktop-nav">
+      <div class="nav-left">
+        <img src="./images/logo.svg" alt="logo" class="logo" />
+        <div class="dropdown">
+          <a href="#">Features</a>
+          <img
+            src="./images/icon-arrow-down.svg"
+            class="arrow"
+            alt="arrow down"
+          />
+          <div class="dropdown-content">
+            <a href="#"
+              ><img src="./images/icon-todo.svg" alt="" /> Todo List</a
+            >
+            <a href="#"
+              ><img src="./images/icon-calendar.svg" alt="" /> Calendar</a
+            >
+            <a href="#"
+              ><img src="./images/icon-reminders.svg" alt="" /> Reminders</a
+            >
+            <a href="#"
+              ><img src="./images/icon-planning.svg" alt="" /> Planning</a
+            >
+          </div>
+        </div>
+        <!-- <div class="dropdown">
+          <a href="#">Company</a>
+          <img
+            src="./images/icon-arrow-down.svg"
+            class="arrow"
+            alt="arrow down"
+          />
+          <div class="dropdown-content">
+            <a href="#">Our History</a>
+            <a href="#">Our Team</a>
+            <a href="#">Blog</a>
+          </div>
+        </div> -->
+        <div class="dropdown" onclick="toggleDropdown(this)">
+          <a href="#">Company</a>
+          <img class="arrow" alt="arrow" />
+          <div class="dropdown-content">
+            <a href="#">Our History</a>
+            <a href="#">Our Team</a>
+            <a href="#">Blog</a>
+          </div>
+        </div>
+        <a href="#">Careers</a>
+        <a href="#">About</a>
+      </div>
+      <div class="nav-right">
+        <a href="#" class="login-btn">Login</a>
+        <a href="#" class="register-btn">Register</a>
+      </div>
+    </nav>
+
+    <img
+      src="./images/icon-menu.svg"
+      alt="hamburger menu"
+      class="mobile-menu-toggle"
+    />
+    <nav class="mobile-nav">
+      <div class="mobile-nav-content">
+        <img
+          src="./images/icon-close-menu.svg"
+          alt="close menu"
+          class="mobile-menu-close"
+        />
+        <div class="dropdown">
+          <a href="#">Features</a>
+          <img
+            src="./images/icon-arrow-down.svg"
+            class="arrow"
+            alt="arrow down"
+          />
+          <div class="dropdown-content">
+            <a href="#"
+              ><img src="./images/icon-todo.svg" alt="" /> Todo List</a
+            >
+            <a href="#"
+              ><img src="./images/icon-calendar.svg" alt="" /> Calendar</a
+            >
+            <a href="#"
+              ><img src="./images/icon-reminders.svg" alt="" /> Reminders</a
+            >
+            <a href="#"
+              ><img src="./images/icon-planning.svg" alt="" /> Planning</a
+            >
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#">Company</a>
+          <img
+            src="./images/icon-arrow-down.svg"
+            class="arrow"
+            alt="arrow down"
+          />
+          <div class="dropdown-content">
+            <a href="#">Our History</a>
+            <a href="#">Our Team</a>
+            <a href="#">Blog</a>
+          </div>
+        </div>
+        <div>
+          <a href="#">Careers</a>
+          <a href="#">About</a>
+          <a href="#">Login</a>
+          <a href="#">Register</a>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="container">
+        <section class="hero-text">
+          <h1 class="main-title">Make <br />remote work</h1>
+          <p class="info">
+            Get your team in sync, no matter your location. Streamline
+            processes, create team rituals, and watch productivity soar
+          </p>
+          <a href="#"><button>Learn More</button></a>
+          <div class="companies">
+            <img src="./images/client-databiz.svg" alt="" />
+            <img src="./images/client-audiophile.svg" alt="" />
+            <img src="./images/client-meet.svg" alt="" />
+            <img src="./images/client-maker.svg" alt="" />
+          </div>
+        </section>
+        <section class="hero-image">
+          <picture>
+            <source
+              media="(max-width: 600px)"
+              srcset="./images/image-hero-mobile.png"
+            />
+            <img
+              src="./images/image-hero-desktop.png"
+              alt="Flowers"
+              class="desktop-image"
+            />
+          </picture>
+        </section>
+      </div>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const mobileMenuToggle = document.querySelector(
+            ".mobile-menu-toggle"
+          );
+          const mobileMenuClose = document.querySelector(".mobile-menu-close");
+          const mobileNav = document.querySelector(".mobile-nav");
+
+          mobileMenuToggle.addEventListener("click", function () {
+            mobileNav.classList.toggle("active");
+          });
+
+          mobileMenuClose.addEventListener("click", function () {
+            mobileNav.classList.remove("active");
+          });
+        });
+
+        function toggleDropdown(element) {
+          element.classList.toggle("open");
+          const arrow = element.querySelector(".arrow");
+          const isOpen = element.classList.contains("open");
+          arrow.src = isOpen
+            ? "./images/icon-arrow-up.svg"
+            : "./images/icon-arrow-down.svg";
+        }
+      </script>
+    </main>
+  </body>
+</html>
