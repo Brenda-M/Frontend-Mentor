@@ -19,7 +19,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [View Live Site Here](https://newsletter-sign-up-frontend.netlify.app/)
+- Live Site URL: [![View Live Site Here](https://img.shields.io/badge/View-Live%20Site-blue)](https://newsletter-sign-up-frontend.netlify.app/){:target="_blank"}
 
 
 ### Built with
