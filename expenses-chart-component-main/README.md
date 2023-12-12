@@ -22,7 +22,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [View Live Site here](https://your-live-site-url.com)
+- Live Site URL: [View Live Site here](https://expenses-chart-component-frontend.netlify.app/)
 
 ### Built with
 

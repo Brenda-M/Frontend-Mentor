@@ -43,12 +43,6 @@ function createChartBar(data) {
   chartBar.classList.add('chart-bar');
   chartBar.setAttribute('data-amount', data.amount);
 
-  const amountText = document.createElement('div');
-  amountText.classList.add('amount');
-  amountText.textContent = data.amount.toFixed(2);
-
-  chartBar.appendChild(amountText);
-
   return chartBar;
 }
 

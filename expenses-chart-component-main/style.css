@@ -154,6 +154,11 @@ hr{
   display: block;
 }
 
+.chart-bar[data-amount="17.45"]:hover {
+  background: var(--soft-red);
+  color: #fff;
+}
+
 .chart-bar[data-amount="17.45"] {
   background: var(--soft-red);
   color: #fff;
