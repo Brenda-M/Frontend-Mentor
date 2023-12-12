@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap');
+
+:root{
+  --soft-red: hsl(10, 79%, 65%);
+  --cyan: hsl(186, 34%, 60%);
+  --dark-brown: hsl(25, 47%, 15%);
+  --medium-brown: hsl(28, 10%, 53%);
+  --cream: hsl(27, 66%, 92%);
+  --very-pale-orange: hsl(33, 100%, 98%);
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  background: var(--cream);
+}
+
+main{
+  margin: 1rem;
+}
+
+
+.top-card{
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+  max-width: 100%;
+  border-radius: 10px;
+  background-color: var(--soft-red);
+  padding: 1rem 2rem;
+}
+
+.main-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 2rem;
+  width: 500px;
+  max-width: 100%;
+  background: white;
+  border-radius: 10px;
+  padding: 3rem 2rem;
+  margin-top: 1rem;
+}
+
+.balance h1{
+  color: var(--cream);
+  font-size: 16px;
+}
+
+.balance p{
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--cream);
+}
+
+
+.summary{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+}
+
+.total h2{
+  font-size: 16px;
+  color: var(--medium-brown);
+}
+
+.total h1{
+  font-size: 3rem;
+  line-height: 3rem;
+  color: var(--dark-brown);
+  font-weight: 700;
+}
+
+.this-month p:first-child {
+  color: var(--dark-brown);
+  font-weight: 700;
+}
+
+.this-month p:nth-child(2) {
+  color: var(--medium-brown);
+  font-weight: 400;
+}
+
+.this-month{
+  text-align: end;
+}
+
+hr{
+  border: 0.5px solid var(--cream)
+}
+
+.title{
+  color: var(--dark-brown);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.chart-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  align-items: flex-end;
+  text-align: center;
+  gap: 15px;
+}
+
+.chart-bar {
+  position: relative;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.amount {
+  display: none;
+  position: absolute;
+  top: -30px; 
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+
+.chart-bar::before {
+  content: attr(data-amount);
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  background: var(--dark-brown);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.chart-bar:hover::before {
+  display: block;
+}
+
+.chart-bar[data-amount="17.45"] {
+  background: var(--soft-red);
+  color: #fff;
+}
+
+.chart-bar[data-amount="34.91"] {
+  background: var(--soft-red);
+  color: #fff;
+}
+
+.chart-bar[data-amount="52.36"] {
+  background: var(--cyan);
+  color: #fff;
+}
+
+
+.chart-bar[data-amount="31.07"] {
+  background: var(--soft-red);
+  color: #fff;
+}
+
+.chart-bar[data-amount="23.39"] {
+  background: var(--soft-red);
+  color: #fff;
+}
+
+.chart-bar[data-amount="43.28"] {
+  background: var(--soft-red);
+  color: #fff;
+}
+
+.chart-bar[data-amount="25.48"] {
+  background: var(--soft-red);
+  color: #fff;
+}
+
+
+.day-container{
+  border-radius: 2px;
+}
+
+.chart-label{
+  color: var(--medium-brown);
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 600px) {
+  .top-card,
+  .main-card {
+    width: 95%;
+  }
+
+  .chart-container {
+    grid-template-columns: repeat(7, 1fr);
+    height: auto;
+    gap: 10px;
+  }
+
+  .summary{
+    gap: 1rem;
+  }
+
+  .total h1{
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+
+  .balance p{
+    font-size: 1.3rem;
+  }
+
+  .total h2{
+    font-size: 14px;
+    color: var(--medium-brown);
+  }
+  
+  .this-month p:nth-child(2) {
+    font-size: 14px;
+  }
+
+  .title{
+    font-size: 1.2rem;
+  }
+  
+  main{
+    margin: 0.5rem;
+  }
+}
