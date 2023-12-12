@@ -19,7 +19,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [View Live Site Here](https://newsletter-sign-up-frontend.netlify.app/){:target="_blank" rel="noopener"}
+- Live Site URL: [View Live Site Here](https://newsletter-sign-up-frontend.netlify.app/)
 
 
 ### Built with
