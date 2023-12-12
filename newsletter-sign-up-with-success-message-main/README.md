@@ -19,7 +19,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [View Live Site Here](https://your-live-site-url.com)
+- Live Site URL: [View Live Site Here](https://newsletter-sign-up-frontend.netlify.app/)
 
 
 ### Built with
