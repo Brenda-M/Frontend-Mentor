@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="card">
+        <div class="card-left">
+          <h1 class="title">Stay updated!</h1>
+          <p class="info" >Join 60,000+ product managers receiving monthly updates on:</p>
+          <ul class="offerings">
+            <li class="items"> <img src="./assets/images/icon-list.svg" alt="list-item">Product discovery and building what matters</li>
+            <li class="items"> <img src="./assets/images/icon-list.svg" alt="list-item">Measuring to ensure updates are a success</li>
+            <li class="items"><img src="./assets/images/icon-list.svg" alt="list-item">And much more!</li>
+          </ul>
+          <form id="form">
+            <div class="labels">
+              <label for="email-input">Email address</label>
+              <div id="error"></div>
+            </div>
+            <input type="text" id="email-input" name="email" placeholder="email@company.com"  autocomplete="email"  />
+            <button type="submit" id="submit">Subscribe to monthly newsletter</button>
+          </form>
+          
+        </div>
+        <div class="card-right">
+          <picture>
+            <source media="(max-width:768px)" srcset="./assets/images/illustration-sign-up-mobile.svg">
+            <img src="./assets/images/illustration-sign-up-desktop.svg" alt="illustration" style="width:auto;">
+          </picture>
+        </div>
+      </div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

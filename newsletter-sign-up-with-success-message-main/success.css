@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+  --tomato: hsl(4, 100%, 67%);
+  --dark-slate-grey: hsl(234, 29%, 20%);
+  --charcoal-grey: hsl(235, 18%, 26%);
+  --grey: hsl(231, 7%, 60%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--charcoal-grey);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  padding: 1rem 3rem;
+  width: 100%;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--dark-slate-grey);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 1.5rem;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  max-width: 420px;
+  width: 100%;
+  padding: 2rem 3rem;
+}
+
+.icon-success img {
+  max-width: 100%;
+  width: 50px;
+}
+
+h1 {
+  color: var(--dark-slate-grey);
+  font-size: 54px;
+  line-height: 1;
+}
+
+p {
+  font-size: 16px;
+  color: var(--charcoal-grey);
+  line-height: 1.5rem
+}
+
+button:hover {
+  background: linear-gradient(to right, #F84E6A, #FA5F3F);
+}
+
+
+span{
+  color: var(--dark-slate-grey);
+  font-weight: 700;
+}
+
+@media screen and (max-width: 375px) {
+  .card-container{
+    width: 100%;
+    border-radius: 0;
+    padding: 8rem 1rem 0 1rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 0.875rem;
+  }
+
+  button {
+    padding: 0.75rem 1.5rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+}
