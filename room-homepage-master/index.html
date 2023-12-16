@@ -26,11 +26,10 @@
       <!-- Slide 1 -->
       <section class="slides">
         <div class="hero-image-container">
-          <img
-            src="./images/desktop-image-hero-1.jpg"
-            alt=""
-            id="slides__image"
-          />
+          <picture>
+            <source media="(max-width:375px)" srcset="./images/mobile-image-hero-1.jpg">
+            <img src="./images/desktop-image-hero-1.jpg" alt="slide 1" id="slides__image">
+          </picture>
           <div class="slider__arrows">
             <button class="prevBtn"><img src="./images/icon-angle-left.svg" alt="" /></button>
             <button class="nextBtn">
@@ -174,9 +173,6 @@
           <button class="cancel-button">
             <img src="./images/icon-close.svg" alt="Menu" />
           </button>
-        </div>
-        <div class="logo">
-          <img src="./images/logo.svg" alt="" />
         </div>
 
         <div class="mobile-nav-items">

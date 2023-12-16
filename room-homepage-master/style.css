@@ -137,6 +137,7 @@ ul {
 
 .slider__arrows button{
   padding: 1rem 1.5rem;
+  margin-top: 1rem;
   background: var(--black);
   border: none;
 }
@@ -172,6 +173,10 @@ ul {
   padding: 1rem;
 }
 
+.about h1{
+  margin-bottom: 0.5rem;
+}
+
 .about__text h1 {
   font-size: 1.5rem;
   font-weight: 600;
@@ -182,6 +187,10 @@ ul {
   width: 100%;
   object-fit: cover;
   display: block;
+}
+
+.mobile-nav{
+  display: none;
 }
 
 @media screen and (max-width: 768px) {
@@ -216,37 +225,6 @@ ul {
     align-items: center;
   }
 
-  .mobile-nav {
-    position: absolute;
-    background: var(--white);
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 2rem;
-  }
-
-  .mobile-nav ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1.5rem;
-  }
-
-  .mobile-nav-items ul li a {
-    color: black;
-    font-weight: 600;
-  }
-
-  .mobile-nav img {
-    max-width: 100%;
-    width: 100%;
-
-  }
-
-  .mobile-nav button {
-    border: none;
-    background-color: var(--white);
-  }
   .hamburger-menu {
     display: inline-block;
   }
@@ -259,6 +237,43 @@ ul {
 
   .hero-text h1 {
     font-size: 1.5rem;
+  }
+
+  .info{
+    padding: 2rem 0;
+  }
+
+  .mobile-nav {
+    position: absolute;
+    background: var(--white);
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 1rem 2rem 1rem;
+  }
+  
+  .mobile-nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .mobile-nav-items ul li a {
+    color: black;
+    font-weight: 600;
+  }
+  
+  .mobile-nav img {
+    max-width: 100%;
+    width: 100%;
+  
+  }
+  
+  .mobile-nav button {
+    border: none;
+    background-color: var(--white);
+    max-width: 100%;
   }
 }
 

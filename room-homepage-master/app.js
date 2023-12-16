@@ -3,19 +3,33 @@ document.addEventListener("DOMContentLoaded", function () {
   const cancelBtn = document.querySelector(".cancel-button");
   const desktopNav = document.querySelector(".desktop-nav-items");
   const mobileNav = document.querySelector(".mobile-nav");
-  
+
+  // Function to handle changes in screen size
+  function handleScreenSizeChange() {
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      desktopNav.style.display = "none";
+    } else {
+      mobileNav.style.display = "none";
+    }
+  }
+
+
+  handleScreenSizeChange();
+
+  window.matchMedia("(max-width: 768px)").addListener(handleScreenSizeChange);
+
   hamburgerMenu.addEventListener("click", function () {
     desktopNav.style.display = "none";
     mobileNav.style.display = "flex";
   });
-  
+
   cancelBtn.addEventListener("click", function () {
     mobileNav.style.display = "none";
   });
 
 
 
-  
+
   const slides = document.querySelectorAll(".slides");
   console.log(slides)
 
