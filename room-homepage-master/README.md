@@ -11,9 +11,11 @@ Users should be able to:
 - See hover states for all interactive elements on the page
 - Navigate the slider using either their mouse/trackpad or keyboard
 
-### Screenshot
+### Screenshots
 
 ![](./images/screenshot.png)
+
+![](./images/screenshot-mobile.png)
 
 ### Built with
 
@@ -23,7 +25,7 @@ Users should be able to:
 - CSS Grid
 - Mobile-first workflow
 
-Live Site URL: [Vie live site here](https://room-homepage-frontend.netlify.app/)
+Live Site URL: [View live site here](https://room-homepage-frontend.netlify.app/)
 
 
 **Have fun building!** 🚀
