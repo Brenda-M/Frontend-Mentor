@@ -1,46 +1,27 @@
-// const submitButton = document.getElementById('submit')
-// const valSelect = document.getElementById('val-select')
+function selectRating(rating) {
+  const ratings = document.querySelectorAll('.rating');
+  ratings.forEach(r => r.classList.remove('selected'));
 
-// submitButton.addEventListener('click', buttonSubmit)
+  const selectedRating = document.querySelector(`[data-rating="${rating}"]`);
+  selectedRating.classList.add('selected');
+}
 
-// function buttonSubmit(){
-//   valSelect.innerHTML()
-// }
-
-console.log('hello')
-
-document.addEventListener('DOMContentLoaded', function () {
-  const ratingsContainer = document.querySelector('.ratings');
-  const submitButton = document.getElementById('submit');
-  const thankYouCard = document.querySelector('.thank-you');
-  const valSelectSpan = document.getElementById('val-select');
-
-  let selectedRating = 0;
-
-  ratingsContainer.addEventListener('click', function (event) {
-    const selectedValue = parseInt(event.target.innerText);
-    if (selectedValue >= 1 && selectedValue <= 5) {
-      selectedRating = selectedValue;
-      highlightSelectedRating(selectedValue);
-    }
-  });
-
-
-  submitButton.addEventListener('click', function () {
-    if (selectedRating > 0) {
-      showThankYouCard(selectedRating);
-    }
-  });
-
-  function highlightSelectedRating(value) {
-    ratingsContainer.querySelectorAll('div').forEach((div, index) => {
-      div.classList.toggle('selected', index + 1 <= value);
-    });
+function submitRating() {
+  const selectedRating = document.querySelector('.selected');
+  
+  if (selectedRating) {
+    const ratingValue = selectedRating.getAttribute('data-rating');
+    
+    window.location.href = `thank-you.html?rating=${ratingValue}`;
+  } else {
+    alert('Please select a rating before submitting.');
   }
+}
 
-  function showThankYouCard(value) {
-    valSelectSpan.textContent = value;
-    document.querySelector('.rating-card').style.display = 'none';
-    thankYouCard.style.display = 'block';
-  }
-});
+if (window.location.pathname === '/thank-you.html') {
+  const urlParams = new URLSearchParams(window.location.search);
+  const ratingValue = urlParams.get('rating');
+
+  const ratingElement = document.getElementById('rating-value');
+  ratingElement.textContent = ratingValue;
+}
