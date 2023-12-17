@@ -31,6 +31,6 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 
-Live Site URL: [View live site here](https://your-live-site-url.com)
+Live Site URL: [View live site here](https://interactive-rating-card-frontend.netlify.app/)
 
 **Have fun building!** 🚀
