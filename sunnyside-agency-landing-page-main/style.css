@@ -18,6 +18,7 @@
   --grayish-blue: hsl(210, 4%, 67%);
   --footer-light-green: #91d3c6;
   --white: hsl(0, 0%, 100%);
+  --button-hover: #6FCEFC;
 }
 
 body {
@@ -42,11 +43,23 @@ h2 {
 
 #mobile-menu-container {
   display: none;
-  position: relative;
-  transform: translate(-50%, 0);
+  position: absolute;
+  left: 50%;
+  top: 75%;
+  transform: translateX(-50%);
   text-align: center;
   background-color: var(--white);
   z-index: 1000;
+  width: 250px;
+}
+
+#mobile-button {
+  background: var(--yellow);
+}
+
+#hamburger-menu {
+  display: none;
+  position: relative;
 }
 
 .nav-menu-triangle{
@@ -57,7 +70,7 @@ h2 {
   border-top: 10px solid transparent;
   border-bottom: 10px solid var(--white);
   position: absolute;
-  top: -20px;
+  top: -19px;
   right: 0;
 }
 
@@ -72,18 +85,11 @@ h2 {
 #mobile-menu-content{
   padding: 40px 100px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  padding: 30px 60px;
 }
 
-#triangle {
-  position: absolute;
-  top: 20px;
-  right: 20px; 
-  width: 0;
-  height: 0;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-bottom: 15px solid red; 
-}
 
 ul {
   list-style: none;
@@ -107,21 +113,15 @@ button {
   text-transform: uppercase;
 }
 
-#desktop-button {
-  background: var(--white);
+button:hover{
+  background-color: var(--button-hover);
+  color: var(--white);
 }
 
-#mobile-button {
-  background: var(--yellow);
-}
 
-#hamburger-menu {
-  display: none;
-  position: relative;
-}
 
 header {
-  position: relative;
+  /* position: relative; */
   background: url("./images/desktop/image-header.jpg") center/cover no-repeat;
   height: 100vh;
 }
@@ -133,6 +133,7 @@ header {
   font-family: "Fraunces", sans-serif;
   text-transform: uppercase;
   position: absolute;
+  text-align: center;
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -140,17 +141,39 @@ header {
 
 .hero img {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  animation: bounce 2s infinite;
 }
 
 .info {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
 }
 
 .info img {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.section-1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "text image";
+}
+
+.tranform-text {
+  grid-area: text;
+}
+
+.tranform-image {
+  grid-area: image;
+}
+
+
+.section-1 img{
   max-width: 100%;
   height: 100%;
   width: 100%;
@@ -160,7 +183,7 @@ header {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 100px;
+  padding: 80px;
 }
 
 .info-details {
@@ -177,6 +200,7 @@ header {
   text-transform: uppercase;
   font-family: "Fraunces", sans-serif;
   position: relative;
+  cursor: pointer;
 }
 
 .cta-1::after {
@@ -193,16 +217,25 @@ header {
   transition: background-color, 250ms;
 }
 
+.cta-1:hover::after{
+  opacity: 0.7;
+}
+
 .cta-2::after {
   content: "";
   display: block;
   position: absolute;
-  bottom: -2px;
+  bottom: -1px;
   opacity: 0.25;
   border-radius: 28px;
   height: 10px;
   width: 137px;
   background: var(--soft-red);
+  transition: opacity 0.3s ease;
+}
+
+.cta-2:hover::after {
+  opacity: 0.7;
 }
 
 .services {
@@ -336,10 +369,33 @@ footer {
   color: var(--dark-moderate-cyan);
 }
 
+li:hover{
+  color: var(--white);
+  cursor: pointer;
+}
+
+.socials ul li:hover img {
+  /* filter: invert(100%);
+  color: var(--white);
+  fill: var(--white) */
+}
+
 .socials ul {
   list-style: none;
   display: flex;
   gap: 2rem;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -348,6 +404,13 @@ footer {
   }
 
   .info{
+    grid-template-columns: 1fr;
+  }
+
+  .section-1 {
+    grid-template-areas: 
+      "image"
+      "text"; 
     grid-template-columns: 1fr;
   }
 
@@ -363,6 +426,20 @@ footer {
   .nav-items {
     display: none;
   }
+
+
+  /* #mobile-menu-container {
+    right: 0;
+    left: 75%;
+    top: 75%;
+    transform: translateX(-50%);
+    text-align: center;
+    background-color: var(--white);
+    z-index: 1000;
+    width: 250px;
+  } */
+
+  
 }
 
 @media screen and (max-width: 375px) {
@@ -386,6 +463,45 @@ footer {
   .testimonials-container {
     gap: 6rem;
     padding: 50px 20px 50px 20px;
+  }
+
+  .info-text {
+    gap: 1.5rem;
+    padding: 40px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .info-details {
+    font-size: 16px;
+  }
+
+  .services-info{
+    width: 300px;
+    top: 80%;
+  }
+
+  .services h1{
+    margin-bottom: .9rem;
+  }
+
+  .services p{
+    font-size: 14px;
+    margin-bottom: .5rem;
+  }
+
+  h2 {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .hero h1{
+    font-size: 30px;
+  }
+  
+  #mobile-menu-container {
+    left: 50%;
+    /* transform: translateX(0); */
   }
 }
 

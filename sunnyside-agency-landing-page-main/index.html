@@ -10,9 +10,10 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+    <link rel="stylesheet" href="style.css" />
     <title>Frontend Mentor | Sunnyside agency landing page</title>
-    </style>
   </head>
   <body>
     <header>
@@ -29,7 +30,7 @@
           </ul>
         </div>
         <div id="hamburger-menu">
-          <img src="./images/icon-hamburger.svg" alt="">
+          <img src="./images/icon-hamburger.svg" alt="" />
         </div>
         <div id="mobile-menu-container">
           <div class="nav-menu-triangle"></div>
@@ -38,7 +39,7 @@
               <li>About</li>
               <li>Services</li>
               <li>Projects</li>
-              <li><button id="mobile-button">Contact</button> </li>
+              <li><button id="mobile-button">Contact</button></li>
             </ul>
           </div>
         </div>
@@ -46,13 +47,12 @@
 
       <div class="hero">
         <h1>We are creatives</h1>
-        <img src="./images/icon-arrow-down.svg" alt="">
+        <img src="./images/icon-arrow-down.svg" alt="" class="arrow-down" />
       </div>
     </header>
-    
 
-    <section class="info section-1">
-      <div class="info-text">
+    <section class="section-1">
+      <div class="info-text" id="transform-section" data-aos="fade-down" >
         <h2>Transform your brand</h2>
         <p class="info-details">
           We are a full-service creative agency specializing in helping brands
@@ -61,11 +61,15 @@
         </p>
         <p class="cta-1">Learn More</p>
       </div>
-        <img src="./images/desktop/image-transform.jpg" alt="" />
+      <img
+        src="./images/desktop/image-transform.jpg"
+        alt="image"
+        class="tranform-image"
+      />
     </section>
     <section class="info">
-        <img src="./images/desktop/image-stand-out.jpg" alt="" />
-      <div class="info-text">
+      <img src="./images/desktop/image-stand-out.jpg" alt="image" />
+      <div class="info-text"  data-aos="fade-right">
         <h2>Stand out to the right audience</h2>
         <p class="info-details">
           Using a collaborative formula of designers, researchers,
@@ -76,18 +80,21 @@
       </div>
     </section>
     <section class="services">
-      <div class="graphic-design">
-          <img src="./images/desktop/image-graphic-design.jpg" alt="">
+      <div class="graphic-design" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+      data-aos-duration="1000">
+        <img src="./images/desktop/image-graphic-design.jpg" alt="" />
         <div class="services-info">
           <h1>Graphic design</h1>
           <p>
-            Great design makes you memorable. We deliver artwork that underscores
-            your brand message and captures potential clients’ attention.
+            Great design makes you memorable. We deliver artwork that
+            underscores your brand message and captures potential clients’
+            attention.
           </p>
         </div>
       </div>
-      <div class="photography">
-        <img src="./images/desktop/image-photography.jpg" alt="">
+      <div class="photography" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+      data-aos-duration="1000">
+        <img src="./images/desktop/image-photography.jpg" alt="" />
         <div class="services-info">
           <h1>Photography</h1>
           <p>
@@ -100,7 +107,8 @@
 
     <section class="testimonials-container">
       <h1>Client Testimonials</h1>
-      <div class="testimonials">
+      <div class="testimonials" data-aos="zoom-in" data-aos-easing="ease-in-back"
+      data-aos-delay="300">
         <div class="testimonial">
           <img src="./images/image-emily.jpg" alt="" />
           <p class="testimonial-content">
@@ -115,8 +123,8 @@
         <div class="testimonial">
           <img src="./images/image-thomas.jpg" alt="" />
           <p class="testimonial-content">
-            Sunnyside’s enthusiasm coupled with their keen interest in our brand’s
-            success made it a satisfying and enjoyable experience.
+            Sunnyside’s enthusiasm coupled with their keen interest in our
+            brand’s success made it a satisfying and enjoyable experience.
           </p>
           <div class="testimonial-author">
             <p>Thomas S.</p>
@@ -138,10 +146,10 @@
     </section>
 
     <section class="gallery">
-      <img src="./images/desktop/image-gallery-milkbottles.jpg" alt="">
-      <img src="./images/desktop/image-gallery-orange.jpg" alt="">
-      <img src="./images/desktop/image-gallery-cone.jpg" alt="">
-      <img src="./images/desktop/image-gallery-sugarcubes.jpg" alt="">
+      <img src="./images/desktop/image-gallery-milkbottles.jpg" alt="" />
+      <img src="./images/desktop/image-gallery-orange.jpg" alt="" />
+      <img src="./images/desktop/image-gallery-cone.jpg" alt="" />
+      <img src="./images/desktop/image-gallery-sugarcubes.jpg" alt="" />
     </section>
 
     <footer>
@@ -164,6 +172,10 @@
         </ul>
       </div>
     </footer>
-   <script src="./app.js"></script>
+    <script src="./app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
