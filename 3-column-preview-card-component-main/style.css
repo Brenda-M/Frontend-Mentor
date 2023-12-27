@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+
+:root {
+  --bright-orange: hsl(31, 77%, 52%);
+  --dark-cyan: hsl(184, 100%, 22%);
+  --very-dark-cyan: hsl(179, 100%, 13%);
+  --transparent-white: hsla(0, 0%, 100%, 0.75);
+  --very-light-gray: hsl(0, 0%, 95%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--very-light-gray);
+  font-family: 'Lexend Deca', sans-serif;
+  font-weight: 400;
+}
+
+.card__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  overflow: hidden;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+#sedan__card {
+  background: var(--bright-orange);
+}
+
+#suvs__card{
+  background: var(--dark-cyan);
+}
+
+#luxury__card{
+  background: var(--very-dark-cyan);
+}
+
+.card__item {
+  /* padding: 35px 30px; */
+  padding: 65px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 2rem;
+  height: 100%;
+}
+
+
+.card__item h1{
+  font-size: 2.5rem;
+  color: var(--transparent-white);
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.card__item p{
+  font-size: 15px;
+  color: var(--transparent-white);
+  flex-grow: 1;
+  min-width: 180px;
+}
+
+.card__item img{
+  max-width: 100%;
+  height: auto;
+}
+
+button{
+  padding: 12px 24px;
+  background: var(--transparent-white);
+  border-radius: 24px;
+  border-color:transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 4rem;
+  font-weight: 700;
+}
+
+button:hover {
+  background: none;
+  border: 2px solid white;
+}
+
+#luxury__card button{
+  color: var(--very-dark-cyan);
+}
+
+#suvs__card button{
+  color: var(--dark-cyan);
+}
+
+#sedan__card button {
+  color: var(--bright-orange);
+}
+
+#luxury__card button:hover{
+  color: white;
+  font-weight: 700;
+}
+
+#suvs__card button:hover{
+  color: white;
+  font-weight: 700;
+}
+
+#sedan__card button:hover {
+  color: white;
+  font-weight: 700;
+}
+
+
+
+@media screen and (max-width:480px) {
+  .card__container{
+    grid-template-columns: 1fr;
+    
+  }
+  .card__item {
+    padding: 50px;
+  }
+
+
+ 
+}
