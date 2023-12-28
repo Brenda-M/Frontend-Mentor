@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+
+:root {
+  --very-dark-gray: hsl(0, 0%, 17%);
+  --dark-gray: hsl(0, 0%, 59%);
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  min-height: 100vh;
+}
+
+h2 {
+  color: var(--dark-gray);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem;
+}
+
+p {
+  color: var(--very-dark-gray);
+  font-weight: 500;
+  font-size: 20px;
+  margin: 0;
+}
+
+.hero {
+  position: relative;
+  background: url("./static/images/pattern-bg-desktop.png");
+  background-size: cover;
+  width: 100%;
+  height: 15rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.results {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.line {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 80%;
+  background-color: var(--dark-gray);
+  position: absolute;
+  top: 10%;
+  right: 0;
+}
+
+.isp::after,
+.location::after,
+.time::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 80%;
+  background-color: var(--dark-gray);
+  position: absolute;
+  top: 10%;
+  left: -15px;
+  margin-right: 2rem;
+}
+
+.address,
+.location,
+.time,
+.isp {
+  padding: 10px;
+  position: relative;
+}
+
+.search-bar {
+  width: 550px;
+  max-width: 100%;
+  height: 45px;
+  display: flex;
+  /* margin: 20px; */
+}
+
+.search-input {
+  flex: 1;
+  height: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  /* margin: 20px; */
+}
+
+.search-button {
+  height: 100%;
+  border-radius: 10px;
+  background: var(--very-dark-gray);
+  cursor: pointer;
+  /* margin: 20px; */
+}
+
+.search-input::placeholder {
+  color: var(--dark-gray);
+  font-size: 14px;
+  padding: 10px;
+}
+
+
+
+@media screen and (max-width: 650px) {
+  .results {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 90%; 
+    top: 20%;
+    transform: translate(-50%, 0%);
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .isp::after,
+  .location::after,
+  .time::after {
+    display: none;
+  }
+}

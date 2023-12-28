@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
+import searchArrow from '../static/images/icon-arrow.svg'
 
 interface SearchBarProps {
   onSearch: (data: any) => void;
@@ -25,6 +26,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
       try {
         const response = await axios.get(apiUrl);
         onSearch(response.data);
+        setSearchQuery('');
       } catch (error) {
         console.error('Error fetching data:', error);
         setError('Error fetching data. Please try again.');
@@ -48,17 +50,18 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
 
   return (
     <>
-      <Form onSubmit={handleSubmit}>
-        <InputGroup className="mb-3">
+      <Form onSubmit={handleSubmit} className="search-bar">
+        <InputGroup>
           <Form.Control
             type="text"
             placeholder="Search for any IP address or domain"
             aria-describedby="ip-search"
             onChange={handleChange}
             value={searchQuery}
+            className="search-input shadow-none"
           />
-          <Button type="submit" variant="outline-secondary">
-            <img src="../static/images/icon-arrow.svg" alt="" />
+          <Button type="submit" variant="outline-secondary" className="search-button">
+            <img src={searchArrow} alt="search" />
           </Button>
         </InputGroup>
       </Form>
