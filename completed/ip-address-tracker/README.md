@@ -1,6 +1,6 @@
 # Frontend Mentor - IP address tracker
 
-![Design preview for the IP address tracker coding challenge](./design/desktop-preview.jpg)
+![Design preview for the IP address tracker coding challenge](./src/static/design/desktop-design.jpg)
 
 ## Welcome! 👋
 # Frontend Mentor - IP address tracker solution
@@ -20,13 +20,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./src/static/images/screenshot.png)
 
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [View live site here](https://ip-address-tracker-frontend-solution.vercel.app/)
 
 ## My process
 
